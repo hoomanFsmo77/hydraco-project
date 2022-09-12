@@ -1,0 +1,184 @@
+/////////////////// offset
+@mixin offset($m_direction,$m_value,$p_direction,$p_value){
+  @if($m_direction==all and $p_direction==all){
+    margin: $m_value;
+    padding: $p_value;
+  } @else if($m_direction==all){
+    margin: $m_value;
+    padding-#{$p_direction}:$p_value ;
+  }@else if($p_direction==all){
+    padding: $p_value;
+    margin-#{$m_direction}:$m_value;
+  }@else{
+    margin-#{$m_direction}:$m_value;
+    padding-#{$p_direction}:$p_value ;
+  }
+}
+//////////////// padding
+@mixin p($direction,$p){
+  @if($direction==all){
+    padding: $p;
+  }@else if($direction==t){
+    padding-top: $p;
+  }@else if($direction==b){
+    padding-bottom: $p;
+  }@else if($direction==r){
+    padding-right: $p;
+  }@else if($direction==l){
+    padding-left: $p;
+  }
+}
+///////////////// margin
+@mixin m($direction,$m){
+  @if($direction==all){
+    margin: $m;
+  }@else if($direction==t){
+    margin-top: $m;
+  }@else if($direction==b){
+    margin-bottom: $m;
+  }@else if($direction==r){
+    margin-right: $m;
+  }@else if($direction==l){
+    margin-left: $m;
+  }
+}
+//////////////// font weight
+@mixin fw($fw){
+  font-weight: $fw;
+}
+/////////////// font sizes
+@mixin fs($fs){
+  font-size: $fs;
+}
+////////////// line height
+@mixin lh($lh){
+  line-height: $lh;
+}
+//////////////// display flex
+@mixin display($d,$one,$two,$three){
+  @if  ($d== f)  {
+    display: flex;
+    flex-direction: $one;
+    -webkit-flex-direction: $one;
+    -ms-flex-direction: $one;
+    justify-content: $two;
+    -webkit-justify-content: $two;
+    align-items: $three;
+    -webkit-align-items: $three;
+
+  }@else if($d== f-i){
+    display: flex!important;
+    flex-direction: $one;
+    -webkit-flex-direction: $one;
+    -ms-flex-direction: $one;
+    justify-content: $two;
+    -webkit-justify-content: $two;
+    align-items: $three;
+    -webkit-align-items: $three;
+
+  }@else if($d== g-i){
+    display: grid!important;
+    grid-template-columns: $one;
+    grid-template-rows: $two;
+    grid-template-areas: $three;
+  }@else if ($d== g)  {
+    display: grid;
+    grid-template-columns: $one;
+    grid-template-rows: $two;
+    grid-template-areas: $three;
+  }
+}
+///////////////// justify and align
+@mixin ja($justify,$align){
+  justify-content: $justify;
+  -webkit-justify-content: $justify;
+  align-items: $align;
+  -webkit-align-items: $align;
+}
+///////////////// border radius
+@mixin borderRadius($br){
+  border-radius: $br;
+  -webkit-border-radius: $br;
+  -moz-border-radius: $br;
+}
+////////////// border functions
+
+@mixin border($direction,$br){
+  @if($direction==all){
+    border: $br;
+  }@else if($direction==r){
+    border-right: $br;
+  }@else if($direction==l){
+    border-left: $br;
+  }@else if($direction==t){
+    border-top: $br;
+  }@else if($direction==b){
+    border-bottom: $br;
+  }
+
+}
+/////////////// gradient btn
+@mixin gradientButtonBg(){
+  background: -moz-linear-gradient(45deg, rgba(0, 188, 212, 1) 0%, rgba(238, 130, 238, 1) 70%);
+  background: -webkit-linear-gradient(45deg, rgba(0, 188, 212, 1) 0%, rgba(238, 130, 238, 1) 70%);
+  background: -o-linear-gradient(45deg, rgba(0, 188, 212, 1) 0%, rgba(238, 130, 238, 1) 70%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#EE82EE', endColorstr='#00BCD4', GradientType=1);
+  background: -ms-linear-gradient(45deg, rgba(0, 188, 212, 1) 0%, rgba(238, 130, 238, 1) 70%);
+  background: linear-gradient(45deg, rgba(0, 188, 212, 1) 0%, rgba(238, 130, 238, 1) 70%);
+}
+
+//////////// media query
+@mixin q($width){
+  @if($width==1){
+    @media (max-width: 500px) {
+      @content;
+    }
+  }@else if($width==2){
+    @media (min-width: 501px ) and (max-width: 768px) {
+      @content;
+    }
+  }@else if($width==3){
+    @media (max-width:970px) {
+      @content;
+    }
+  }
+}
+/////////////// dimension
+@mixin dimension($width,$height){
+  width: $width;
+  height: $height;
+}
+///////////////// text style
+@mixin testStyle($size,$weight,$color){
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+}
+
+/////////////////// transition
+@mixin transition($property){
+  transition: $property  ;
+  -moz-transition: $property  ;
+  -webkit-transition: $property  ;
+  -o-transition: $property;
+}
+/////////////////// animation
+@mixin animation($property){
+  animation: $property;
+  -moz-animation: $property;
+  -webkit-animation: $property;
+  -o-animation: $property;
+}
+/////////////////////// transform
+@mixin transform($property){
+  transform: $property;
+  -ms-transform: $property;
+
+}
+/////////////////////// box shadow
+@mixin boxShadow($property){
+  box-shadow: $property;
+  -moz-box-shadow: $property;
+  -webkit-box-shadow: $property;
+  -o-box-shadow: $property;
+}

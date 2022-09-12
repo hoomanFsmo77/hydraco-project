@@ -1,0 +1,236 @@
+@import "Variables";
+@import "Functions";
+@import "UtilityClasses";
+@media (max-width: 500px) {
+  #header .header-content {
+    .boxes{
+      @include display(g-i,repeat(2,1fr),unset,unset);
+      @include m(t,0.5rem);
+      @include ja(center!important,center);
+      gap: 0.5rem!important;
+    }
+    .box{
+      @include dimension(auto!important,auto);
+      overflow: hidden;
+      @include p(all,0);
+    }
+    h4{
+      @include fs(1rem);
+    }
+  }
+  .btn-gradient-h{
+    @include m(t,1rem);
+    @include lh(2.5);
+    justify-self: center !important;
+    a{
+      line-height: 1;
+    }
+  }
+  #header  .header-content .container{
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0.5rem;
+    .gird-item-top{
+      grid-column: 1 / span 2;
+    }
+    .gird-item-bottom{
+      @include dimension(100%,100%);
+      grid-column: 1 / span 2;
+      display: grid;
+      justify-content: center!important;
+      grid-template-columns: 1fr!important;
+    }
+  }
+  #dragon-icon{
+    width: 224px!important;
+  }
+  ///////////////////////// about section ///////////////////////////
+  #about{
+    h1{
+      font-size: 2rem;
+    }
+    h5{
+      font-size: 1rem;
+    }
+    main{
+      @include display(g-i,1fr,auto,unset);
+      div{
+        &:first-child img{
+          width: 70%;
+        }
+        text-align: center;
+
+      }
+    }
+    img{
+      margin-bottom: 1rem;
+    }
+    p{
+      line-height: 1.5;
+    }
+
+  }
+  ///////////////////////////// journal section
+  #journal-slider{
+    .topic{
+      margin: auto 1rem!important;
+      font-size: 1.5rem!important;
+    }
+    .slider-btn{
+      margin-top: 1.2rem;
+    }
+  }
+  ///////////////////////// profile info section
+  #hydraco-manager-profile{
+    h1{
+      font-size: 2rem;
+    }
+  }
+  ////////////// partner section
+  #partners{
+    svg{
+      width: 100px!important;
+    }
+  }
+  /////////// product slider
+  .slider-item{
+    margin:0!important;
+  }
+  .next-btn{
+    right: 1% !important;
+
+
+  }
+  .left-btn{
+    left: 1% !important;
+  }
+  ///////////////////// footer
+  #footer{
+    .pages-result,.technical-support{
+      p{
+        font-size:0.9rem!important;
+      }
+      h4{
+        text-align: left!important;
+        line-height: 1!important;
+      }
+    }
+  }
+
+}
+
+@media (min-width: 501px ) and (max-width: 768px) {
+  #header .header-content{
+    .boxes{
+      margin-top: 0.5rem;
+      justify-content: center!important;
+      gap: 0.5rem!important;
+    }
+    .box{
+      @include dimension(140px!important,190px);
+      overflow: hidden;
+      padding: 0;
+    }
+  }
+  #engineer-icon{
+    background: url(../../images/header/engineer-picture-mobile.png) no-repeat;
+    @include dimension(267px,135px);
+    display: block
+  }
+  #engineer-icon-2{
+    background: url(../../images/header/engineer-picture-2-mobile.png);
+    @include dimension(198px,183px);
+    display: block;
+  }
+  #dragon-icon{
+    width: 224px!important;
+  }
+  //////////////////////////// about section //////////////////
+  #about{
+
+    main{
+      @include display(g-i,1fr,auto,unset);
+      div{
+        &:first-child img{
+          width: 90%;
+        }
+        text-align: center;
+
+      }
+    }
+    img{
+      margin-bottom: 1rem;
+    }
+    p{
+      line-height: 1.5;
+    }
+  }
+  ///////////////////////// profile info section
+  #hydraco-manager-profile{
+    h1{
+      font-size: 3rem!important;
+    }
+  }
+  ////////////// partner section
+  #partners{
+    svg{
+      width: 100px!important;
+    }
+  }
+  //////////////// product section
+  .next-btn{
+    right: 3% !important;
+
+  }
+  .left-btn{
+    left: 2% !important;
+
+  }
+
+
+
+
+}
+/*////////////////// header //////////////////////*/
+
+/*////////////////////////// nav/////////////////////////*/
+#nav{
+  position: relative;
+  .menu-h .list-h{
+    display: none;
+    position: absolute;
+    top: 67px;
+    width: 100%;
+    left: 0;
+    background:$darkColor2;
+    z-index: 999;
+  }
+
+}
+.list-h li:hover:before,.list-h li.active:before{
+  width: 90%;
+}
+#header #nav .menu-h ul li:last-child,#header #nav .menu-h ul li:nth-child(6){
+  display: block;
+}
+#header .header-content .container .gird-item-bottom{
+  @include display(g, 1fr 1fr,unset,unset);
+  justify-content: center;
+}
+#dragon-icon{
+  width: 224px!important;
+}
+///////////////////// change theme ////////////////////////
+body.changeBg .list-h li a{
+  color: $orangeColor2;
+}
+
+///////////////////// contact us section ////////////////////////
+#contact-us{
+  .login-form{
+    border-top-left-radius: 28px;
+    border-bottom-left-radius: 28px;
+  }
+  .create-account-inputs{
+    width: 100% !important;
+  }
+}

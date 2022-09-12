@@ -1,0 +1,25 @@
+{
+  "name": "hydraco",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "main": "sass --watch public/styles/scss/main.scss:public/styles/css/main.css",
+    "responsive": "sass --watch public/styles/scss/responsive_styles.scss:public/styles/css/responsive_styles.css"
+  },
+  "keywords": [
+    "bootstrap",
+    "jquery"
+  ],
+  "author": "hooman mousavi",
+  "license": "MIT",
+  "dependencies": {
+    "animate.css": "^4.1.1",
+    "bootstrap": "^5.1.3",
+    "bootstrap-icons": "^1.8.3",
+    "jquery": "^3.6.0",
+    "typeit": "^8.7.0",
+    "wow.js": "^1.2.2"
+  }
+}
